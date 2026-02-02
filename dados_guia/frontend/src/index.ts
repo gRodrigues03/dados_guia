@@ -19,7 +19,7 @@ const instances = new WeakMap<
 >();
 
 function render(parent: FrontendRendererArgs["parentElement"], state: InstanceState): void {
-    const bruh = document.getElementById('bruh-ddg')
+    const bruh = parent.querySelector('#bruh-ddg')
     if (!bruh) {return}
     const t = state.endDate || new Date;
 
@@ -35,7 +35,8 @@ function render(parent: FrontendRendererArgs["parentElement"], state: InstanceSt
 
 const MyComponent: FrontendRenderer<ComponentData> = (args) => {
     const { parentElement, data } = args;
-    console.log(data)
+
+    parentElement.className = 't-ddg'
 
     let state = instances.get(parentElement);
 
@@ -96,7 +97,7 @@ const MyComponent: FrontendRenderer<ComponentData> = (args) => {
         e = data.passageiro;
     }
 
-    document.getElementById("t-ddg")!.innerHTML = `<p class=title><strong>Guia nº</strong> ${data.DOCUMENTO}</p>${data.TERMINO_VIAGENS?'<div class=encerrada>ENCERRADA</div>':""}<div class=flex-info><p>Motorista: <strong>${data.MATRICULA}</strong></p><p>Carro: <strong>${data.CARRO}</strong></p><p>Linha: <strong>${data.LINHA}</strong></p><p>Turno: <strong>${data.TURNO}</strong></p><p>Início Jornada: <strong>${data.GARAGEM}</strong></p><p>Início Viagens: <strong>${data.PONTO}</strong></p>${data.TERMINO_VIAGENS?`<p>Término Viagens: <strong>${data.TERMINO_VIAGENS}</strong></p>`:""}${data.TERMINO_JORNADA?`<p>Término Jornada: <strong>${data.TERMINO_JORNADA}</strong></p>`:""}\n<p>Carga horária: <strong id=bruh-ddg></strong></p>${data.placa?`<p>Placa: <strong>${data.placa}</strong></p>`:""}${data.ROLETA_INICIAL?`<p>Roleta inicial: <strong>${data.ROLETA_INICIAL}</strong></p>`:""}${data.ROLETA_FINAL?`<p>Roleta final: <strong>${data.ROLETA_FINAL}</strong></p>`:""}${e?`<p>Passageiros: <strong>${e}</strong></p>`:""}</div>`;
+    parentElement!.innerHTML = `<p class=title><strong>Guia nº</strong> ${data.DOCUMENTO}</p>${data.TERMINO_VIAGENS?'<div class=encerrada>ENCERRADA</div>':""}<div class=flex-info><p>Motorista: <strong>${data.MATRICULA}</strong></p><p>Carro: <strong>${data.CARRO}</strong></p><p>Linha: <strong>${data.LINHA}</strong></p><p>Turno: <strong>${data.TURNO}</strong></p><p>Início Jornada: <strong>${data.GARAGEM}</strong></p><p>Início Viagens: <strong>${data.PONTO}</strong></p>${data.TERMINO_VIAGENS?`<p>Término Viagens: <strong>${data.TERMINO_VIAGENS}</strong></p>`:""}${data.TERMINO_JORNADA?`<p>Término Jornada: <strong>${data.TERMINO_JORNADA}</strong></p>`:""}\n<p>Carga horária: <strong id=bruh-ddg></strong></p>${data.placa?`<p>Placa: <strong>${data.placa}</strong></p>`:""}${data.ROLETA_INICIAL?`<p>Roleta inicial: <strong>${data.ROLETA_INICIAL}</strong></p>`:""}${data.ROLETA_FINAL?`<p>Roleta final: <strong>${data.ROLETA_FINAL}</strong></p>`:""}${e?`<p>Passageiros: <strong>${e}</strong></p>`:""}</div>`;
 
     render(parentElement, state);
 
