@@ -1,0 +1,8 @@
+# Ship a minimal metadata file that can be picked up by Streamlit at runtime.
+[project]
+name = "time_elapsed"
+version = "0.0.1"
+
+[[tool.streamlit.component.components]]
+name = "time_elapsed"
+asset_dir = "dist"

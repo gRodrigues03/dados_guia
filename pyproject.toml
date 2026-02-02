@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dados_guia"
+version = "0.0.1"
+description = "An Antd Date Picker Streamlit custom component for GPC using Streamlit's CCv2 api."
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.13"
+authors = [{ name = "Gabriel Rodrigues", email = "gabriel@rdrgs.com.br" }]
+
+[tool.setuptools.packages.find]
+include = ["dados_guia*"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+dados_guia = ["dist/*", "pyproject.toml"]

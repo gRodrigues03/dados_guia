@@ -1,0 +1,41 @@
+{
+  "name": "date_picker",
+  "description": "streamlit date picker",
+  "author": "hi.yangqian@gmail.com",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@streamlit/component-v2-lib": "^0.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "vite build --emptyOutDir",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "homepage": ".",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "vite": "^7.3.1",
+    "terser-webpack-plugin": "^5.3.16",
+    "webpack": "^5.104.1",
+    "typescript": "^5.9.3"
+  }
+}
